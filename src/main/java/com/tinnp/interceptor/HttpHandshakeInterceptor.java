@@ -17,9 +17,7 @@ import org.springframework.web.socket.server.HandshakeInterceptor;
 public class HttpHandshakeInterceptor implements HandshakeInterceptor{ 
 								//HandshakeInterceptor : Handle event WebSocket in process Handshake client and server
 	
-private static final Logger logger = LoggerFactory.getLogger(HttpHandshakeInterceptor.class);
-    
-
+	private static final Logger logger = LoggerFactory.getLogger(HttpHandshakeInterceptor.class);
 	/**
 	 * The beforeHandshake method is called before the WebSocket handshake is completed
 	 * @param ServerHttpRequest request: represent the request handshake
@@ -32,8 +30,7 @@ private static final Logger logger = LoggerFactory.getLogger(HttpHandshakeInterc
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
             Map<String, Object> attributes) throws Exception {
         // logger will print a "Call beforeHandshake" message to indicate that the method has been called. 
-        logger.info("Call beforeHandshake");
-        
+        logger.info("Call beforeHandshake");      
         if (request instanceof ServletServerHttpRequest) {
             ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) request;
             HttpSession session = servletRequest.getServletRequest().getSession();

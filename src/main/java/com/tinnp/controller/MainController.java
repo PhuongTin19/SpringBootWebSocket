@@ -32,7 +32,7 @@ public class MainController {
     public String doLogin(HttpServletRequest request, @RequestParam(defaultValue = "") String username) {
         username = username.trim();
 
-        if (username.isEmpty()) {
+        if (username.isEmpty()) {  
             return "login";
         }
         request.getSession().setAttribute("username", username);
